@@ -92,14 +92,14 @@ impl Plugin for AppPlugin {
             game::plugin,
         ));
 
-        #[cfg(not(target_family = "wasm"))]
-        {
-            use bevy::input::common_conditions::input_toggle_active;
-            use bevy_inspector_egui::quick::WorldInspectorPlugin;
-            app.add_plugins(
-                WorldInspectorPlugin::default().run_if(input_toggle_active(true, KeyCode::Tab)),
-            );
-        }
+        // #[cfg(not(target_family = "wasm"))]
+        // {
+        //     use bevy::input::common_conditions::input_toggle_active;
+        //     use bevy_inspector_egui::quick::WorldInspectorPlugin;
+        //     app.add_plugins(
+        //         WorldInspectorPlugin::default().run_if(input_toggle_active(true, KeyCode::Tab)),
+        //     );
+        // }
 
         // Enable dev tools for dev builds.
         #[cfg(feature = "dev")]

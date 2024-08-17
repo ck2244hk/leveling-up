@@ -70,7 +70,7 @@ pub fn movement_input(
     time: Res<Time>,
     hero_query: Query<(&BaseStates), With<Hero>>,
 ) {
-    #[cfg(any(target_os = "windows", target_os = "linux", target_os = "macos"))]
+    // #[cfg(any(target_os = "windows", target_os = "linux", target_os = "macos"))]
     if let Ok((mut velocity, mut current_movement, mut face_side)) = player_query.get_single_mut() {
         let Ok(state) = hero_query.get_single() else {
             return;
@@ -159,7 +159,7 @@ pub fn update_idle(
             }
         }
 
-        #[cfg(any(target_os = "windows", target_os = "linux", target_os = "macos"))]
+        // #[cfg(any(target_os = "windows", target_os = "linux", target_os = "macos"))]
         if !keys.any_pressed([
             KeyCode::ArrowLeft,
             KeyCode::KeyA,
