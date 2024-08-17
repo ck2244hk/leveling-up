@@ -1,0 +1,16 @@
+id,name,tier,armor_force,weight,sapien,beast,automatan,inanimate,mythical,spirit,element
+1,Pixies,1,Infratry,Light,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+2,Rabbits,1,Infratry,Light,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+3,Squirrels,1,Infratry,Light,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+4,Wolves,1,Infratry,Balance,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+5,Bears,2,Infratry,Heavy,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+6,Dryads,2,Infratry,Balance,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+7,Panthers,2,Infratry,Light,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+8,Treants,2,Infratry,Heavy,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+9,Forest Trolls,3,Infratry,Balance,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+10,Werebears,3,Infratry,Heavy,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+11,Griffins,3,Infratry,Heavy,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+12,Ents,3,Infratry,Balance,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+13,Wyverns,4,Infratry,Balance,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+14,Unicorn Guardians,4,Infratry,Balance,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral
+15,Ancient Forest Dragons,4,Flying,Heavy,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Neutral

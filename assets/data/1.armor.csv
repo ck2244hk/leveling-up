@@ -1,0 +1,11 @@
+id,name,tier,weight,element,description
+1,Cloth Armor,1,Light,Neutral,"Thinest Armor, better than nothing "
+2,Leather Armor,2,Light,Neutral,"Can protect you from small scatches./n if it will kill you, you'll still die."
+3,Chainmail Armor,3,Heavy,Neutral,Standard Knight Equipment
+4,Scale Armor,4,Balance,Neutral,You wear what you hunts
+5,Plate Armor,5,Balance,Neutral,
+6,Enchanted Armor,6,Light,Neutral,
+7,Mythril Armor,7,Balance,Neutral,
+8,Adamantium Armor,8,Heavy,Neutral,
+9,Dragonhide Armor,9,Heavy,Neutral,
+10,Divine Armor,10,Balance,Neutral,

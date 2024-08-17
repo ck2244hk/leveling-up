@@ -1,0 +1,38 @@
+{
+    "owned": {
+        "Weapon": [
+            {
+                "id": 1,
+                "level": 1,
+                "name": "Queens Blade",
+                "item_type": "Weapon",
+                "description": "In the old time, Queen uses this blade to protect her people."
+            },
+            {
+                "id": 2,
+                "level": 1,
+                "name": "Flame of Alabus",
+                "item_type": "Weapon",
+                "description": "Since Tilia has fallen, Alabus's anger has only made this fire burns even brighter."
+            },
+            {
+                "id": 3,
+                "level": 1,
+                "name": "Edinear's Tears",
+                "item_type": "Weapon",
+                "description": "Edinear was the mother of all. Her tear purify all unholiness."
+            },
+            {
+                "id": 4,
+                "level": 1,
+                "name": "Shield of Tilia",
+                "item_type": "Weapon",
+                "description": "A giant shield Standing in front of Tilia, no one could ever pick up."
+            }
+        ]
+    },
+    "eq_weapon": null,
+    "eq_helmet": null,
+    "eq_armor": null,
+    "eq_shoes": null
+}

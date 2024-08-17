@@ -1,0 +1,5 @@
+id,name,tier,range,weight,slot,physical,sensory,fable,mental,element,description
+1,Queens Blade,0,Mid,Light,0,TRUE,FALSE,FALSE,FALSE,Neutral,"In the old time, Queen uses this blade to protect her people."
+2,Flame of Alabus,1,Close,Light,0,TRUE,FALSE,FALSE,FALSE,Fire,"Since Tilia has fallen, Alabus's anger has only made this fire burns even brighter."
+3,Edinear's Tears,1,Close,Light,0,TRUE,FALSE,FALSE,FALSE,Water,Edinear was the mother of all. Her tear purify all unholiness.
+4,Shield of Tilia,1,Close,Light,0,TRUE,FALSE,FALSE,FALSE,Earth,"A giant shield Standing in front of Tilia, no one could ever pick up."
