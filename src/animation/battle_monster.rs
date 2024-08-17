@@ -6,7 +6,6 @@ use crate::{
         battle::event::{AttackEvent, BattleEvent},
         character::component::BattleMonsterSprite,
     },
-    preload::sprites::{MonsterAsset, MonsterHandles},
     state::OverlayCombatState,
 };
 
@@ -32,28 +31,28 @@ pub struct BattleMonsterActionBundle {
 }
 
 impl BattleMonsterActionBundle {
-    fn idle(image: Handle<Image>, texture_atlas: Handle<TextureAtlasLayout>) -> Self {
-        BattleMonsterActionBundle {
-            timer: AnimationTimer(Timer::from_seconds(0.1, TimerMode::Repeating)),
-            index: AnimationIndices::new(9, true),
-            image: UiImage::new(image),
-            texture_atlas: TextureAtlas {
-                layout: texture_atlas,
-                index: 0,
-            },
-        }
-    }
-    fn attack(image: Handle<Image>, texture_atlas: Handle<TextureAtlasLayout>) -> Self {
-        BattleMonsterActionBundle {
-            timer: AnimationTimer(Timer::from_seconds(0.1, TimerMode::Repeating)),
-            index: AnimationIndices::new(3, true),
-            image: UiImage::new(image),
-            texture_atlas: TextureAtlas {
-                layout: texture_atlas,
-                index: 0,
-            },
-        }
-    }
+    // fn idle(image: Handle<Image>, texture_atlas: Handle<TextureAtlasLayout>) -> Self {
+    //     BattleMonsterActionBundle {
+    //         timer: AnimationTimer(Timer::from_seconds(0.1, TimerMode::Repeating)),
+    //         index: AnimationIndices::new(9, true),
+    //         image: UiImage::new(image),
+    //         texture_atlas: TextureAtlas {
+    //             layout: texture_atlas,
+    //             index: 0,
+    //         },
+    //     }
+    // }
+    // fn attack(image: Handle<Image>, texture_atlas: Handle<TextureAtlasLayout>) -> Self {
+    //     BattleMonsterActionBundle {
+    //         timer: AnimationTimer(Timer::from_seconds(0.1, TimerMode::Repeating)),
+    //         index: AnimationIndices::new(3, true),
+    //         image: UiImage::new(image),
+    //         texture_atlas: TextureAtlas {
+    //             layout: texture_atlas,
+    //             index: 0,
+    //         },
+    //     }
+    // }
 }
 
 pub struct BattleMonsterAnimationPlugin;

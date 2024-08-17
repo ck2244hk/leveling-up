@@ -6,7 +6,7 @@ use super::*;
 pub struct BattleEvent {
     pub is_player_victory: bool,
     pub monster_entity: Entity,
-    pub battle_entity: Entity,
+    // pub battle_entity: Entity,
 }
 
 #[derive(Event)]

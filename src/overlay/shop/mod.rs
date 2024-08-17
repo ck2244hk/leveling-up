@@ -65,11 +65,7 @@ impl Plugin for ShopUIPlugin {
             )
             .add_systems(
                 Update,
-                (
-                    interact_with_confirm_buy_button,
-                    interact_with_cancel_buy_button,
-                    spawn_equip_pop_up,
-                )
+                (interact_with_cancel_buy_button, spawn_equip_pop_up)
                     .run_if(in_state(OverlayShopState::Popup)),
             )
             .add_systems(OnExit(OverlayShopState::Popup), despawn_pop_up)

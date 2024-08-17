@@ -1,6 +1,6 @@
 use bevy::{ecs::component::Component, reflect::Reflect};
 use serde::{Deserialize, Serialize};
-use serde_with::{serde_as, DisplayFromStr};
+use serde_with::serde_as;
 
 use super::{EquipmentData, ItemType};
 

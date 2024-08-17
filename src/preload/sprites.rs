@@ -1,7 +1,4 @@
-use std::default;
-
 use bevy::{
-    asset::LoadState,
     prelude::*,
     render::texture::{ImageLoaderSettings, ImageSampler},
     utils::hashbrown::HashMap,

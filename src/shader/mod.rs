@@ -1,9 +1,6 @@
 use bevy::{
     prelude::*,
-    render::{
-        camera,
-        render_resource::{AsBindGroup, ShaderRef, ShaderType},
-    },
+    render::render_resource::{AsBindGroup, ShaderRef, ShaderType},
     sprite::{Material2d, Material2dPlugin},
     window::PrimaryWindow,
 };
@@ -96,10 +93,10 @@ fn spawn_len_flare(mut commands: Commands) {
 }
 
 fn update_weather_w_player(
-    player_query: Query<&PlayerEnv, (Changed<PlayerEnv>)>,
+    player_query: Query<&PlayerEnv, Changed<PlayerEnv>>,
     mut commands: Commands,
     mut materials: ResMut<Assets<LensFlareShader>>,
-    mut texture_query: Query<(Entity), With<WeatherTexture>>,
+    texture_query: Query<Entity, With<WeatherTexture>>,
     mut meshes: ResMut<Assets<Mesh>>,
     asset_server: Res<AssetServer>,
     mut user_textures: ResMut<TexHandleQueue>,

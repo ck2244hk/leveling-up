@@ -2,7 +2,6 @@ pub mod battle_scene;
 pub mod board;
 mod ending_credit;
 mod header;
-mod hero_pick_ui;
 pub mod terminal;
 
 use battle_scene::BattleScenePlugin;

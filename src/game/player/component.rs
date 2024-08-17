@@ -1,5 +1,3 @@
-use bevy::utils::HashMap;
-
 use crate::{
     game::preload::Weather,
     model::{helmet::HelmetData, shoes::ShoesData, ItemType},
@@ -7,9 +5,9 @@ use crate::{
 
 use super::*;
 
-pub trait Savable {
-    fn save(&self) -> bool;
-}
+// pub trait Savable {
+//     fn save(&self) -> bool;
+// }
 
 #[derive(Component)]
 pub struct DecendingHero;

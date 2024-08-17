@@ -42,7 +42,6 @@ pub fn send_next_turn(
                         battle_event_writer.send(BattleEvent {
                             is_player_victory: false,
                             monster_entity: battle.monster_entity,
-                            battle_entity: entity,
                         });
                         // write_terminal_event
                         //     .send(WriteTerminalEvent::new(format!("You are fainted\n")));
@@ -53,7 +52,6 @@ pub fn send_next_turn(
                         battle_event_writer.send(BattleEvent {
                             is_player_victory: true,
                             monster_entity: battle.monster_entity,
-                            battle_entity: entity,
                         });
                         // write_terminal_event.send(WriteTerminalEvent::new(format!(
                         //     "You defeated the monster\n"

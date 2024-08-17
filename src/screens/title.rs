@@ -3,30 +3,16 @@
 use bevy::prelude::*;
 
 use crate::{
-    animation::component::{AnimationIndices, AnimationTimer},
     preload::{
         images::{UiImageAsset, UiImageHandles},
-        sprites::{HeroAction, HeroActionHandles, HeroActionTextureAtLasHandles},
+        sprites::{HeroActionHandles, HeroActionTextureAtLasHandles},
     },
     state::{FirstTime, OverlayShopState, Screen, SimulationState},
     theme::prelude::*,
 };
 
-use std::time::Duration;
-
-use bevy::prelude::*;
-
-#[derive(Component)]
-pub struct MainMenu {}
-
 #[derive(Component)]
 pub struct PlayButton {}
-
-#[derive(Component)]
-pub struct QuitButton {}
-
-#[derive(Component)]
-pub struct ShopButton {}
 
 pub(super) fn plugin(app: &mut App) {
     app.add_systems(OnEnter(Screen::Title), show_title_screen);
@@ -35,8 +21,8 @@ pub(super) fn plugin(app: &mut App) {
 fn show_title_screen(
     mut commands: Commands,
     image_set: Res<UiImageHandles>,
-    sprite_set: Res<HeroActionHandles>,
-    texture_atlas_set: Res<HeroActionTextureAtLasHandles>,
+    // sprite_set: Res<HeroActionHandles>,
+    // texture_atlas_set: Res<HeroActionTextureAtLasHandles>,
 ) {
     let row = commands
         .spawn(NodeBundle {
@@ -120,7 +106,7 @@ fn show_title_screen(
     // });
 
     commands
-        .ui_root_w_bgImage(image_set.0.get(&UiImageAsset::Cover).expect("No Cover Pic"))
+        .ui_root_w_bg_image(image_set.0.get(&UiImageAsset::Cover).expect("No Cover Pic"))
         .insert(StateScoped(Screen::Title))
         .with_children(|children| {
             children.title("Leveling Up");

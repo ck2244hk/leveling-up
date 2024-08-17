@@ -34,7 +34,7 @@ pub fn sync_weather(mut weather_query: Query<(&mut Weather, &Zone), Changed<Weat
 
 pub fn update_weather(
     mut weather_query: Query<&mut Weather>,
-    mut zone_query: Query<&mut CollisionDetection, (Changed<CollisionDetection>, With<Zone>)>,
+    zone_query: Query<&mut CollisionDetection, (Changed<CollisionDetection>, With<Zone>)>,
 ) {
     info!("Weather Changed");
     for mut weather in weather_query.iter_mut() {

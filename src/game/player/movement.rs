@@ -1,4 +1,4 @@
-use bevy::{input::touch::TouchPhase, window::PrimaryWindow};
+use bevy::window::PrimaryWindow;
 use bevy_ecs_ldtk::{
     assets::{LdtkProject, LevelMetadataAccessor},
     LevelIid,
@@ -7,34 +7,32 @@ use bevy_ecs_ldtk::{
 use super::*;
 use crate::game::{
     character::component::{BaseStates, Hero},
-    joystick::{
-        create_joystick, JoystickFixed, NoAction, VirtualJoystickEvent, VirtualJoystickNode,
-    },
+    joystick::{JoystickFixed, NoAction, VirtualJoystickEvent, VirtualJoystickNode},
 };
 
-pub fn spawn_joystick(mut commands: Commands, asset_server: Res<AssetServer>) {
-    // Spawn Virtual Joystick at horizontal center using helper function
-    create_joystick(
-        &mut commands,
-        asset_server.load("joystick/Knob.png"),
-        asset_server.load("joystick/Outline.png"),
-        Color::WHITE.into(),
-        None,
-        None,
-        Vec2::new(40., 40.),
-        Vec2::new(80., 80.),
-        Style {
-            width: Val::Px(150.),
-            height: Val::Px(150.),
-            position_type: PositionType::Absolute,
-            left: Val::Percent(62.),
-            bottom: Val::Percent(8.),
-            ..default()
-        },
-        JoystickFixed,
-        NoAction,
-    );
-}
+// pub fn spawn_joystick(mut commands: Commands, asset_server: Res<AssetServer>) {
+//     // Spawn Virtual Joystick at horizontal center using helper function
+//     create_joystick(
+//         &mut commands,
+//         asset_server.load("joystick/Knob.png"),
+//         asset_server.load("joystick/Outline.png"),
+//         Color::WHITE.into(),
+//         None,
+//         None,
+//         Vec2::new(40., 40.),
+//         Vec2::new(80., 80.),
+//         Style {
+//             width: Val::Px(150.),
+//             height: Val::Px(150.),
+//             position_type: PositionType::Absolute,
+//             left: Val::Percent(62.),
+//             bottom: Val::Percent(8.),
+//             ..default()
+//         },
+//         JoystickFixed,
+//         NoAction,
+//     );
+// }
 
 pub fn update_joystick(
     mut joystick: EventReader<VirtualJoystickEvent>,
@@ -68,7 +66,7 @@ pub fn movement_input(
     keys: Res<ButtonInput<KeyCode>>,
     mut player_query: Query<(&mut Velocity, &mut CurrentMovement, &mut FacingSide), With<Player>>,
     time: Res<Time>,
-    hero_query: Query<(&BaseStates), With<Hero>>,
+    hero_query: Query<&BaseStates, With<Hero>>,
 ) {
     // #[cfg(any(target_os = "windows", target_os = "linux", target_os = "macos"))]
     if let Ok((mut velocity, mut current_movement, mut face_side)) = player_query.get_single_mut() {

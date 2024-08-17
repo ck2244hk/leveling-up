@@ -4,7 +4,7 @@ use bevy::{asset::Asset, ecs::component::Component, reflect::TypePath};
 use serde::{Deserialize, Serialize};
 
 use super::{sub::DropEquipment, ItemType};
-use serde_with::{serde_as, DisplayFromStr};
+use serde_with::serde_as;
 
 #[serde_as]
 #[derive(Asset, TypePath, Debug, Component, Clone, Deserialize, Serialize)]

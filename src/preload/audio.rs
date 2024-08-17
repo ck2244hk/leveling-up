@@ -1,4 +1,4 @@
-use bevy::{asset::LoadState, prelude::*, utils::hashbrown::HashMap};
+use bevy::{prelude::*, utils::hashbrown::HashMap};
 
 use super::MyAssetPath;
 

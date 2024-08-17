@@ -1,5 +1,5 @@
+use bevy::log::info;
 use bevy::prelude::*;
-use bevy::{input::touch::TouchPhase, log::info};
 
 use crate::game::board::styles::NORMAL_BUTTON_COLOR;
 use crate::game::board::SelectGridEvent;
@@ -304,7 +304,7 @@ pub fn interact_with_grid_button(
 
 pub fn click_to_close(
     buttons: Res<ButtonInput<MouseButton>>,
-    mut touch_evr: EventReader<TouchInput>,
+    // touch_evr: EventReader<TouchInput>,
     touches: Res<Touches>,
     mut next_board_state: ResMut<NextState<OverlayStatusBoardState>>,
 

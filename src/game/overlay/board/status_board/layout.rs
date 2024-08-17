@@ -120,7 +120,7 @@ fn build_status_board(
                     justify_content: JustifyContent::Stretch,
                     ..Style::DEFAULT
                 },
-                background_color: Color::rgba(0.4, 0.4, 0.4, 0.7).into(),
+                background_color: Color::srgba(0.4, 0.4, 0.4, 0.7).into(),
                 ..default()
             },
             Name::new("Status Board Spacer"),
@@ -391,7 +391,7 @@ fn build_status_board(
                     ..default()
                 },
                 border_color: Color::BLACK.into(),
-                background_color: Color::rgb(103., 102., 81.).into(),
+                background_color: Color::srgb(103., 102., 81.).into(),
                 ..default()
             },
             TerminalBundle::new_with_auto(22.),

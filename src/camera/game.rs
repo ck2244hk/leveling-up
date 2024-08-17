@@ -1,7 +1,7 @@
 use bevy::{prelude::*, window::PrimaryWindow};
 use bevy_ecs_ldtk::{
     assets::{LdtkProject, LevelMetadataAccessor},
-    LevelIid, LevelSelection,
+    LevelIid,
 };
 
 use crate::{
@@ -16,7 +16,7 @@ use crate::{
 
 use super::MainCamera;
 
-const ASPECT_RATIO: f32 = 1.;
+// const ASPECT_RATIO: f32 = 1.;
 
 pub(super) fn plugin(app: &mut App) {
     app.add_systems(OnEnter(Screen::Playing), init_camera_position)
@@ -44,7 +44,7 @@ pub fn zoom_w_camera(
     mut player_query: Query<&mut Zooming, With<Camera>>,
     hero_query: Query<&BaseStates, With<Hero>>,
 ) {
-    let Ok((mut zoom)) = player_query.get_single_mut() else {
+    let Ok(mut zoom) = player_query.get_single_mut() else {
         return;
     };
     if let Ok(base_state) = hero_query.get_single() {
@@ -141,7 +141,7 @@ pub fn spawn_camera_position(
     mut event_reader: EventReader<ChangeMapEvent>,
 ) {
     for event in event_reader.read() {
-        if let Some((destination, location)) = location_query
+        if let Some((destination, _)) = location_query
             .iter()
             .find(|(_, location)| location.equal(&event.location))
         {
@@ -157,25 +157,13 @@ pub fn spawn_camera_position(
 
 #[allow(clippy::type_complexity)]
 pub fn camera_fit_inside_current_level(
-    mut camera_query: Query<(&mut Transform), (Without<Player>, With<MainCamera>)>,
-    player_query: Query<&Transform, With<Player>>,
+    mut camera_query: Query<&mut Transform, (Without<Player>, With<MainCamera>)>,
     level_query: Query<(&Transform, &LevelIid), (Without<MainCamera>, Without<Player>)>,
     ldtk_projects: Query<&Handle<LdtkProject>>,
-    level_selection: Res<LevelSelection>,
     ldtk_project_assets: Res<Assets<LdtkProject>>,
     window_query: Query<&Window, With<PrimaryWindow>>,
 ) {
-    let Ok(Transform {
-        translation: player_translation,
-        ..
-    }) = player_query.get_single()
-    else {
-        return;
-    };
-
-    let player_translation = player_translation;
     let window = window_query.get_single().unwrap();
-    let aspect_ratio = window.width() / window.height();
 
     let Ok(mut camera_transform) = camera_query.get_single_mut() else {
         return;

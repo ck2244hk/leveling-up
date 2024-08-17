@@ -2,8 +2,6 @@ use bevy::prelude::*;
 
 pub mod app_state;
 
-use app_state::*;
-
 pub(super) fn plugin(app: &mut App) {
     app.init_state::<Screen>()
         .enable_state_scoped_entities::<Screen>()

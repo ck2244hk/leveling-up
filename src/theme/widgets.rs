@@ -168,7 +168,7 @@ pub trait Containers {
     /// Spawns a root node that covers the full screen
     /// and centers its content horizontally and vertically.
     fn ui_root(&mut self) -> EntityCommands;
-    fn ui_root_w_bgImage(&mut self, image: &Handle<Image>) -> EntityCommands;
+    fn ui_root_w_bg_image(&mut self, image: &Handle<Image>) -> EntityCommands;
 }
 
 impl Containers for Commands<'_, '_> {
@@ -191,7 +191,7 @@ impl Containers for Commands<'_, '_> {
         ))
     }
 
-    fn ui_root_w_bgImage(&mut self, image: &Handle<Image>) -> EntityCommands {
+    fn ui_root_w_bg_image(&mut self, image: &Handle<Image>) -> EntityCommands {
         self.spawn((
             Name::new("UI Root W Background Image"),
             ImageBundle {

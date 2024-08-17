@@ -1,20 +1,12 @@
 use bevy::{
     prelude::*,
-    render::{
-        camera::RenderTarget,
-        render_resource::{
-            Extent3d, TextureDescriptor, TextureDimension, TextureFormat, TextureUsages,
-        },
-        view::RenderLayers,
+    render::render_resource::{
+        Extent3d, TextureDescriptor, TextureDimension, TextureFormat, TextureUsages,
     },
-    sprite::MaterialMesh2dBundle,
     window::PrimaryWindow,
 };
 
-use crate::{
-    helper::{SmoothDamp, Velocity, Zooming},
-    shader::{CenterPos, PostProcessingShader},
-};
+use crate::helper::{SmoothDamp, Velocity, Zooming};
 
 pub mod game;
 
@@ -24,40 +16,40 @@ pub(super) fn plugin(app: &mut App) {
 }
 
 /// Default render layers for pixel-perfect rendering.
-/// You can skip adding this component, as this is the default.
-const SHADOW_LAYERS: RenderLayers = RenderLayers::layer(0);
+// /// You can skip adding this component, as this is the default.
+// const SHADOW_LAYERS: RenderLayers = RenderLayers::layer(0);
 
-/// Render layers for high-resolution rendering.
-const HIGH_RES_LAYERS: RenderLayers = RenderLayers::layer(1);
+// /// Render layers for high-resolution rendering.
+// const HIGH_RES_LAYERS: RenderLayers = RenderLayers::layer(1);
 
-const POSTPROCESS_LAYERS: RenderLayers = RenderLayers::layer(10);
+// const POSTPROCESS_LAYERS: RenderLayers = RenderLayers::layer(10);
 
 /// Low-resolution texture that contains the pixel-perfect world.
 /// Canvas itself is rendered to the high-resolution world.
-#[derive(Component)]
-struct Canvas;
+// #[derive(Component)]
+// struct Canvas;
 
-/// Camera that renders the pixel-perfect world to the [`Canvas`].
-#[derive(Component)]
-struct ShadowCamera;
+// /// Camera that renders the pixel-perfect world to the [`Canvas`].
+// #[derive(Component)]
+// struct ShadowCamera;
 
 /// Camera that renders the [`Canvas`] (and other graphics on [`HIGH_RES_LAYERS`]) to the screen.
 #[derive(Component)]
 struct InGameCamera;
 
 /// Camera that renders the [`Canvas`] (and other graphics on [`POSTPROCESS_LAYERS`]) to the screen.
-#[derive(Component)]
-struct PostCamera;
+// #[derive(Component)]
+// struct PostCamera;
 
 #[derive(Component)]
 pub struct MainCamera;
 
 fn setup_camera(
     mut commands: Commands,
-    mut images: ResMut<Assets<Image>>,
+    // mut images: ResMut<Assets<Image>>,
     window_query: Query<&Window, With<PrimaryWindow>>,
-    mut meshes: ResMut<Assets<Mesh>>,
-    mut materials: ResMut<Assets<PostProcessingShader>>,
+    // meshes: ResMut<Assets<Mesh>>,
+    // materials: ResMut<Assets<PostProcessingShader>>,
 ) {
     let window = window_query.single();
 
@@ -97,7 +89,7 @@ fn setup_camera(
     // fill image.data with zeroes
     canvas.resize(canvas_size);
 
-    let image_handle = images.add(canvas);
+    // let image_handle = images.add(canvas);
 
     // this camera renders whatever is on `SHADOW_LAYERS` to the canvas
     // let shadow = commands

@@ -4,7 +4,7 @@
 use std::path::PathBuf;
 pub mod component;
 
-use bevy::{prelude::*, reflect::TypePath, render::render_resource::*, sprite::Material2d};
+use bevy::{prelude::*, reflect::TypePath, render::render_resource::*};
 
 pub mod common;
 

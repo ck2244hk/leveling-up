@@ -1,10 +1,10 @@
-pub trait ManualHandledError {}
+// pub trait ManualHandledError {}
 
 #[derive(Debug)]
-pub struct UserInputError(pub String);
+pub struct UserInputError();
 
-impl ManualHandledError for UserInputError {}
+// impl ManualHandledError for UserInputError {}
 
-#[derive(Debug)]
-pub struct InvalidUnitError(pub String);
-impl ManualHandledError for InvalidUnitError {}
+// #[derive(Debug)]
+// pub struct InvalidUnitError(pub String);
+// impl ManualHandledError for InvalidUnitError {}

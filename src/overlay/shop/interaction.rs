@@ -71,7 +71,7 @@ pub fn interact_with_back_button(
     >,
     mut next_shop_state: ResMut<NextState<OverlayShopState>>,
 ) {
-    for (interaction, mut background_color) in button_query.iter_mut() {
+    for (interaction, background_color) in button_query.iter_mut() {
         match *interaction {
             Interaction::Pressed => {
                 // *background_color = PRESSED_BUTTON_COLOR.into();
@@ -101,7 +101,7 @@ pub fn interact_with_equire_button(
     helmet_data: Res<Assets<HelmetData>>,
     shoes_data: Res<Assets<ShoesData>>,
 ) {
-    for (interaction, mut background_color, button) in button_query.iter_mut() {
+    for (interaction, background_color, button) in button_query.iter_mut() {
         match *interaction {
             Interaction::Pressed => {
                 let Ok(mut eq_belt) = player_query.get_single_mut() else {
@@ -174,7 +174,7 @@ pub fn interact_with_upgrade_button(
     helmet_data: Res<Assets<HelmetData>>,
     shoes_data: Res<Assets<ShoesData>>,
 ) {
-    for (interaction, mut background_color, button) in button_query.iter_mut() {
+    for (interaction, background_color, button) in button_query.iter_mut() {
         match *interaction {
             Interaction::Pressed => {
                 let Ok(mut eq_belt) = player_query.get_single_mut() else {
@@ -242,7 +242,7 @@ pub fn interact_with_unequip_button(
     mut next_shop_state: ResMut<NextState<OverlayShopState>>,
     mut player_query: Query<&mut EquipmentBelt, With<Player>>,
 ) {
-    for (interaction, mut background_color, button) in button_query.iter_mut() {
+    for (interaction, background_color, button) in button_query.iter_mut() {
         match *interaction {
             Interaction::Pressed => {
                 info!("Unequip button being pressed");
@@ -282,14 +282,11 @@ pub fn interact_with_unequip_button(
 }
 
 pub fn interact_with_buy_button(
-    mut button_query: Query<
-        (&Interaction, &mut BackgroundColor, &BuyButton),
-        (Changed<Interaction>, With<BuyButton>),
-    >,
+    mut button_query: Query<(&Interaction, &BuyButton), (Changed<Interaction>, With<BuyButton>)>,
     mut next_shop_state: ResMut<NextState<OverlayShopState>>,
     mut pop_up_event: EventWriter<SpawnConfirmPopupEvent>,
 ) {
-    for (interaction, mut background_color, button) in button_query.iter_mut() {
+    for (interaction, button) in button_query.iter_mut() {
         match *interaction {
             Interaction::Pressed => {
                 // *background_color = PRESSED_BUTTON_COLOR.into();
@@ -304,57 +301,11 @@ pub fn interact_with_buy_button(
     }
 }
 
-pub fn interact_with_confirm_buy_button(
-    mut button_query: Query<
-        (&Interaction, &mut BackgroundColor, &ConfirmButton),
-        (Changed<Interaction>, With<ConfirmButton>),
-    >,
-    next_shop_state: ResMut<NextState<OverlayShopState>>,
-    player_query: Query<&mut Money, With<Player>>,
-    not_enough_event: EventWriter<NotEnoughMoneyPopupEvent>,
-    shop_query: Query<(&mut ActiveShopTab, &mut SelectedEquipment), With<Shop>>,
-    spawn_equip_event: EventWriter<SpawnEquipPopupEvent>,
-) {
-    for (interaction, mut background_color, button) in button_query.iter_mut() {
-        match *interaction {
-            Interaction::Pressed => {
-                // *background_color = PRESSED_BUTTON_COLOR.into();
-                // let (mut money, mut bought_equipment) =
-                //     player_query.get_single_mut().expect("No Player been found");
-                // if let Some((equipment, cost)) =
-                //     equipment_query.iter().find(|(eq, _)| eq.get() == button.0)
-                // {
-                //     if money.pay(cost) {
-                //         bought_equipment.0.insert(equipment.get());
-                //         let (mut active, mut selected) =
-                //             shop_query.get_single_mut().expect("No Shop been spawned");
-
-                //         selected.set_changed();
-                //         active.set_changed();
-                //         spawn_equip_event.send(SpawnEquipPopupEvent(equipment.get()));
-                //     } else {
-                //         not_enough_event.send(NotEnoughMoneyPopupEvent);
-                //         next_shop_state.set(OverlayShopState::Opened);
-                //     }
-                // }
-
-                // info!("Confirm Window");
-            }
-
-            // Interaction::None => *background_color = NORMAL_BUTTON_COLOR.into(),
-            _ => (),
-        }
-    }
-}
-
 pub fn interact_with_cancel_buy_button(
-    mut button_query: Query<
-        (&Interaction, &mut BackgroundColor),
-        (Changed<Interaction>, With<CancelButton>),
-    >,
+    mut button_query: Query<(&Interaction), (Changed<Interaction>, With<CancelButton>)>,
     mut next_shop_state: ResMut<NextState<OverlayShopState>>,
 ) {
-    for (interaction, mut background_color) in button_query.iter_mut() {
+    for (interaction) in button_query.iter_mut() {
         match *interaction {
             Interaction::Pressed => {
                 // *background_color = PRESSED_BUTTON_COLOR.into();

@@ -1,5 +1,3 @@
-use bevy::app::AppExit;
-
 use crate::game::character::component::{Hero, Turns};
 
 use super::*;

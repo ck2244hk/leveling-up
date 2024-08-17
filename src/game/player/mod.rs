@@ -51,7 +51,7 @@ impl Plugin for PlayerPlugin {
                     .run_if(in_state(SimulationState::Running))
                     .run_if(in_state(Screen::Playing)),
             )
-            .add_systems(OnEnter(Screen::Playing), (init_player_position_w_map))
+            .add_systems(OnEnter(Screen::Playing), init_player_position_w_map)
             .add_systems(
                 Update,
                 (handle_battle, spawn_player_position, init_player_w_save),

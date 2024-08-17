@@ -1,4 +1,4 @@
-use bevy::{asset::LoadState, prelude::*, utils::hashbrown::HashMap};
+use bevy::{prelude::*, utils::hashbrown::HashMap};
 use bevy_ecs_ldtk::{assets::LdtkProject, LdtkPlugin};
 
 use super::MyAssetPath;

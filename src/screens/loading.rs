@@ -5,7 +5,6 @@ use bevy::{prelude::*, utils::HashMap};
 
 use crate::{
     assets::{BgmHandles, ImageHandles, SfxHandles},
-    model::monster,
     preload::{
         audio::{AudioEffectHandles, MusicHandles},
         data::{

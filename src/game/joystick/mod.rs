@@ -19,7 +19,7 @@ use systems::{
     update_action, update_behavior, update_behavior_constraints, update_behavior_knob_delta,
     update_fire_events, update_input, update_missing_state, update_ui,
 };
-pub use utils::create_joystick;
+// pub use utils::create_joystick;
 
 #[derive(ScheduleLabel, Clone, Debug, PartialEq, Eq, Hash)]
 pub struct UpdateKnobDelta;

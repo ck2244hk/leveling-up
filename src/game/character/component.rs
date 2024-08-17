@@ -6,9 +6,8 @@ use bevy::{
     log::info,
     prelude::ImageBundle,
     reflect::Reflect,
-    sprite::{SpriteBundle, SpriteSheetBundle, TextureAtlas},
+    sprite::{SpriteBundle, TextureAtlas},
     time::{Timer, TimerMode},
-    ui::node_bundles::AtlasImageBundle,
 };
 
 use crate::{
@@ -460,7 +459,7 @@ impl StatePoint {
 
     pub fn half(&mut self) -> Result<u32, UserInputError> {
         if self.0 == 0 {
-            Err(UserInputError("Not Enough State Point".to_string()))
+            Err(UserInputError())
         } else if self.0 == 1 {
             self.0 -= 1;
             Ok(1)
@@ -473,7 +472,7 @@ impl StatePoint {
 
     pub fn all(&mut self) -> Result<u32, UserInputError> {
         if self.0 == 0 {
-            Err(UserInputError("Not Enough State Point".to_string()))
+            Err(UserInputError())
         } else {
             let old = self.0;
             self.0 = 0;
