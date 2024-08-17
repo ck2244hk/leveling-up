@@ -1,4 +1,4 @@
-use crate::{state::SimulationState, game::character::component::BaseStates};
+use crate::{game::character::component::BaseStates, state::SimulationState};
 
 use super::*;
 // Battle was spawned by the creation of fightable monster

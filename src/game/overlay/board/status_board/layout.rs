@@ -1,8 +1,8 @@
 use crate::audio_effects::ButtonClickEffect;
-use crate::state::SimulationState;
-use crate::state::TerminalState;
 use crate::game::overlay::board::components::*;
 use crate::game::overlay::board::styles::*;
+use crate::state::SimulationState;
+use crate::state::TerminalState;
 
 use crate::game::TerminalBundle;
 use crate::IPHONE_BAND_SPACER_HEIGHT;

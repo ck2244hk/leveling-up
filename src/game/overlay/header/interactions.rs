@@ -1,10 +1,10 @@
 use bevy::prelude::*;
 
-use crate::state::{OverlayStatusBoardState, SimulationState};
 use crate::game::overlay::header::components::StatusBoardButton;
 use crate::game::overlay::header::styles::{
     HOVERED_BUTTON_COLOR, NORMAL_BUTTON_COLOR, PRESSED_BUTTON_COLOR,
 };
+use crate::state::{OverlayStatusBoardState, SimulationState};
 
 pub fn interact_with_status_button_button(
     mut button_query: Query<

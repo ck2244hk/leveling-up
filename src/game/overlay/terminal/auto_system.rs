@@ -1,5 +1,3 @@
-
-
 use super::*;
 
 use component::AutoTerminalText;

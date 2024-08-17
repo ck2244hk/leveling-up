@@ -1,9 +1,6 @@
 use bevy::{asset::Asset, reflect::TypePath};
 
-use super::{
-    sub::Tier,
-    EquipmentData,
-};
+use super::{sub::Tier, EquipmentData};
 
 #[derive(serde::Deserialize, Asset, TypePath, Debug, Clone)]
 pub struct HelmetData {

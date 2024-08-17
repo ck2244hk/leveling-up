@@ -23,8 +23,8 @@ use super::{
     Player, TerminalQueue, WriteTerminalEvent,
 };
 use crate::{
-    state::{OverlayCombatState, TerminalState},
     game::EquipmentBelt,
+    state::{OverlayCombatState, TerminalState},
 };
 
 pub struct BattlePlugin;

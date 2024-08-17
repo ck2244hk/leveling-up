@@ -2,9 +2,7 @@
 
 use bevy::prelude::*;
 
-use crate::{
-    assets::BgmHandles, audio::bgm::BgmCommands as _, state::Screen, theme::prelude::*,
-};
+use crate::{assets::BgmHandles, audio::bgm::BgmCommands as _, state::Screen, theme::prelude::*};
 
 pub(super) fn plugin(app: &mut App) {
     app.add_systems(OnEnter(Screen::Credits), show_credits_screen);

@@ -2,7 +2,7 @@ use bevy::prelude::*;
 
 mod update;
 
-use crate::{state::OverlayEndingCreditState, helper::ValExtension};
+use crate::{helper::ValExtension, state::OverlayEndingCreditState};
 use update::*;
 
 pub struct EndingCreditPlugin;

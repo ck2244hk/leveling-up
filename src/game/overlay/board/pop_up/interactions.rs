@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 
 use crate::{
-    state::{OverlayScoreBoardState, OverlayStatusBoardState, Screen},
     game::board::SpawnScoreBoardEvent,
+    state::{OverlayScoreBoardState, OverlayStatusBoardState, Screen},
 };
 
 use super::{CancelRestartButton, ConfirmRestartButton};

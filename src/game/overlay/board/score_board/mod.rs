@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 
 use crate::{
-    state::{OverlayScoreBoardState, Screen},
     model::sub::DropEquipment,
+    state::{OverlayScoreBoardState, Screen},
 };
 
 mod interactions;

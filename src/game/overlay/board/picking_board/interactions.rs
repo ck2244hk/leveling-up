@@ -1,7 +1,6 @@
 use bevy::prelude::*;
 
 use crate::{
-    state::{OverlayDroppingPickingState, OverlayScoreBoardState},
     game::{
         overlay::board::{
             components::{
@@ -11,6 +10,7 @@ use crate::{
         },
         Player, Storage,
     },
+    state::{OverlayDroppingPickingState, OverlayScoreBoardState},
 };
 
 use super::{ConfirmSlotEvent, SelectGridEvent, UnconfirmSlotEvent};

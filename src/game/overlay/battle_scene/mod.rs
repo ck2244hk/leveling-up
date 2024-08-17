@@ -1,10 +1,10 @@
-use crate::state::{OverlayCombatState, TerminalState};
 use crate::game::monster::Monster;
 use crate::game::TerminalBundle;
 use crate::model::monster::MonsterData;
 use crate::model::sub::Element;
 use crate::model::ItemType;
 use crate::preload::images::{EquipmentHandles, UiImageAsset, UiImageHandles};
+use crate::state::{OverlayCombatState, TerminalState};
 use bevy::{prelude::*, ui::FocusPolicy};
 
 use crate::game::battle::component::Combat;

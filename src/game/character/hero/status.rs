@@ -3,7 +3,6 @@ use bevy::prelude::*;
 use crate::game::battle_scene::component::LvUpQueue;
 use crate::game::character::component::*;
 
-
 pub fn update_player_level(
     mut player_query: Query<
         (&mut Level, &mut Experience, &mut StatePoint),

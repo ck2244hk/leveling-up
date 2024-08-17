@@ -1,8 +1,8 @@
 use bevy::{prelude::*, utils::HashMap};
 
 use crate::{
-    state::{OverlayCombatState, Screen, SimulationState},
     game::{Player, PlayerEnv},
+    state::{OverlayCombatState, Screen, SimulationState},
 };
 
 use super::preload::{CollisionDetection, Weather, Zone};

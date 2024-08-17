@@ -1,7 +1,6 @@
 use bevy::prelude::*;
 use bevy::{input::touch::TouchPhase, log::info};
 
-use crate::state::{OverlayStatusBoardState, SimulationState};
 use crate::game::board::styles::NORMAL_BUTTON_COLOR;
 use crate::game::board::SelectGridEvent;
 use crate::game::overlay::board::SpawnRestartConfirmPopupEvent;
@@ -10,6 +9,7 @@ use crate::game::{
     character::component::*, overlay::board::components::*,
     overlay::header::components::StatusBoardButton,
 };
+use crate::state::{OverlayStatusBoardState, SimulationState};
 
 pub fn interact_with_str_half_button(
     mut button_query: Query<

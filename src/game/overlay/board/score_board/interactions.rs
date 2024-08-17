@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 
-use crate::state::{OverlayScoreBoardState, OverlayShopState, Screen};
 use crate::game::overlay::board::components::{MenuButton, ShopButton};
 use crate::game::overlay::header::styles::{NORMAL_BUTTON_COLOR, PRESSED_BUTTON_COLOR};
+use crate::state::{OverlayScoreBoardState, OverlayShopState, Screen};
 
 pub fn interact_with_score_button(
     mut button_query: Query<

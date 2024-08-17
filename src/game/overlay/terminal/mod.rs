@@ -13,8 +13,8 @@ use bevy::{
 use component::AutoTerminalText;
 
 use crate::{
-    state::{OverlayCombatState, OverlayStatusBoardState, TerminalState},
     helper::string_to_char,
+    state::{OverlayCombatState, OverlayStatusBoardState, TerminalState},
 };
 
 use auto_system::*;
